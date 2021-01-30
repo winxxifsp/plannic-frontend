@@ -1,34 +1,54 @@
 <div class="container">
-  <div class="card shadow-lg o-hidden border-0 my-5">
-      <div class="card-body p-0">
-          <div class="row">
-              <div class="col-lg-5 d-none d-lg-flex">
-                  <div class="flex-grow-1 bg-register-image" style="background-image: url(&quot;assets/img/student02.jpg&quot;);"></div>
-              </div>
-              <div class="col-lg-7">
-                  <div class="p-5">
-                      <div class="text-center">
-                          <h4 class="text-dark mb-4">Crie sua conta!</h4>
-                      </div>
-                      <form class="user">
-                          <div class="form-group row">
-                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleName" placeholder="Nome" name="name"></div>
-                              <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleSobrenome" placeholder="Sobrenome" name="sobrenome"></div>
-                          </div>
-                          <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="E-mail" name="email"></div>
-                          <div class="form-group row">
-                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="exampleSenhaInput" placeholder="Digite sua Senha" name="senha"></div>
-                              <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="exampleRepeatSenhaInput" placeholder="Digite sua senha novamente" name="senha_repeat"></div>
-                          </div><button class="btn btn-primary btn-block text-white btn-user botao-custom" type="submit">Registrar</button>
-                          <hr>
-                      </form>
-                      <div class="text-center"><a class="small" href="forgot-password.html">Esqueceu sua senha?</a></div>
-                      <div class="text-center"><a class="small" href="login.html">Já possui uma conta? Entre aqui!</a></div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <div class="card shadow-lg o-hidden border-0 my-5">
+        <div class="card-body p-0">
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-flex">
+                    <div class="flex-grow-1 bg-register-image"
+                        style="background-image: url(&quot;assets/img/student02.jpg&quot;);"></div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h4 class="text-dark mb-4">Crie sua conta!</h4>
+                        </div>
+                        <form class="user">
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input class="form-control form-control-user" type="text" id="exampleName"
+                                        [(ngModel)]="pNome" placeholder="Nome" name="name">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="form-control form-control-user" type="text" id="exampleSobrenome"
+                                    [(ngModel)]="sNome" placeholder="Sobrenome" name="sobrenome">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control form-control-user" type="email" id="exampleInputEmail"
+                                [(ngModel)]="email" aria-describedby="emailHelp" placeholder="E-mail" name="email">
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input class="form-control form-control-user" type="password" id="exampleSenhaInput"
+                                    [(ngModel)]="senha" placeholder="Digite sua Senha" name="senha">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="form-control form-control-user" type="password"
+                                    [(ngModel)]="confsenha" id="exampleRepeatSenhaInput" placeholder="Digite sua senha novamente"
+                                        name="senha_repeat">
+                                </div>
+                            </div><button class="btn btn-primary btn-block text-white btn-user botao-custom"
+                                type="button" (click)="registrar()">Registrar</button>
+                            <hr>
+                        </form>
+                        <div class="text-center"><a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
+                        </div>
+                        <div class="text-center"><a class="small" href="login.html">Já possui uma conta? Entre aqui!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <script src="../../../assets/js/theme.js"></script>
 <script src="../../../assets/js/bs-init.js"></script>
