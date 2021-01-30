@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "plannic"
+    }
+  },
+  "defaultProject": "plannic",
+  "cli": {
+    "analytics": false
+  }
 }
