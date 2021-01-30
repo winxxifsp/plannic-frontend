@@ -13,6 +13,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.8.9 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "plannic-back"
+          heroku_app_name: "plannic"
           heroku_email: "projeto2020if@gmail.com"
           buildpack: "https://github.com/winxxifsp/plannic-frontend.git"
