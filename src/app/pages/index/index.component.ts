@@ -10,6 +10,7 @@ export class IndexComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.getElementById("body").classList.remove("bg-gradient-primary");
   }
 
 }

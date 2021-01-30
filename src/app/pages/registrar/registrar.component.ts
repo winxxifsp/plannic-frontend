@@ -10,6 +10,7 @@ export class RegistrarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.getElementById("body").classList.add("bg-gradient-primary");
   }
 
 }
