@@ -1,3 +1,4 @@
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegistrarComponent } from './pages/registrar/registrar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,8 @@ import { LoginComponent } from './pages/login/login.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrarComponent 
+    RegistrarComponent,
+    DashboardComponent
    ],  
   imports: [
     BrowserModule,

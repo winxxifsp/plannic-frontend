@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
+  emailOk: boolean = true;
+  formOk: boolean = true;
   roles: string[] = [];
 
   constructor(private authService: LoginService, private tokenStorage: TokenStorageService,  private router:Router) { }
@@ -32,34 +34,49 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(): void {
-    const { email, password } = this.form;
-    this.authService.login(email, password).subscribe(
-      data => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
-
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        this.router.navigate(['']);
-
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    );
+  emailOK(email) {
+    if (email.search("@") != -1 &&
+      (email.search("gmail.com") != -1 || email.search("outlook.com") != -1 || email.search("yahoo.com") != -1)) {
+      this.emailOk = true;
+      return true;
+    } else {
+      this.emailOk = false;
+      return false;
+    }
   }
 
-
-
-  login() {
-    let infos = {
-      email: this.email,
-      senha: this.senha
+  onSubmit({ email, password }): void {
+    if(this.emailOK(email)){
+      this.authService.login(email, password).subscribe(
+        data => {
+          this.tokenStorage.saveToken(data.accessToken);
+          this.tokenStorage.saveUser(data);
+  
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
+          this.roles = this.tokenStorage.getUser().roles;
+          this.router.navigate([`/dashboard/${data.nome}`]);
+  
+        },
+        err => {
+          this.errorMessage = err.error.message;
+          this.isLoginFailed = true;
+        }
+      );
     }
-    console.log(infos)
+  }
+
+  formOK(): void {
+    const { email, password } = this.form;
+    if (!email || !password) {
+      this.formOk = false;
+      this.emailOk = false;
+    } else {
+      this.formOk = true;
+      this.emailOk = true;
+      if (this.emailOK(email))
+        this.onSubmit(this.form);
+    }
   }
 
   reloadPage(): void {

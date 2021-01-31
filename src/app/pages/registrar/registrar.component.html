@@ -12,31 +12,44 @@
                             <h4 class="text-dark mb-4">Crie sua conta!</h4>
                         </div>
                         <form class="user">
-                        
                             <div class="form-group">
                                 <input class="form-control form-control-user" type="text" id="exampleName"
-                                [(ngModel)]="form.nome"  placeholder="Nome Completo" name="nome">
+                                    [ngStyle]="{'border-color': !formOk ? 'red' : null}" [(ngModel)]="form.nome"
+                                    placeholder="Nome Completo" name="nome">
                             </div>
                             <div class="form-group">
                                 <input class="form-control form-control-user" type="email" id="exampleInputEmail"
-                                [(ngModel)]="form.email" aria-describedby="emailHelp" placeholder="E-mail" name="email">
+                                    [ngStyle]="{'border-color': !emailOk ? 'red' : null}"
+                                    [(ngModel)]="form.email" aria-describedby="emailHelp" placeholder="E-mail"
+                                    name="email">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input class="form-control form-control-user" type="password" id="exampleSenhaInput"
-                                    [(ngModel)]="form.password" placeholder="Digite sua Senha" name="senha">
+                                    <input [ngStyle]="" class="form-control form-control-user" type="password"
+                                        [ngStyle]="{'border-color': !passOk ? 'red' : null}"
+                                        id="exampleSenhaInput" [(ngModel)]="form.password"
+                                        placeholder="Digite sua Senha" name="senha">
                                 </div>
                                 <div class="col-sm-6">
                                     <input class="form-control form-control-user" type="password"
-                                    [(ngModel)]="form.password" id="exampleRepeatSenhaInput" placeholder="Digite sua senha novamente"
-                                        name="password">
+                                        [ngStyle]="{'border-color': !passOk ? 'red' : null}"
+                                        [(ngModel)]="form.confPass" id="exampleRepeatSenhaInput"
+                                        placeholder="Digite sua senha novamente" name="password">
                                 </div>
-                            </div><button class="btn btn-primary btn-block text-white btn-user botao-custom"
-                                type="button" (click)="onSubmit()">Registrar</button>
+                            </div>
+                            <div class="form-group" style="margin-left: 10px;">
+                                <span [hidden]="formOk" style="color: red; ">Preencher todos os campos</span>
+                                <br [hidden]="formOk && passOk">
+                                <span [hidden]="passOk" style="color: red; ">Senhas divergentes</span>
+                                <br [hidden]="((formOk && passOk) || (passOk && emailOk))">
+                                <span [hidden]="emailOk" style="color: red; ">E-mail inválido</span>
+                            </div>
+                            <button class="btn btn-primary btn-block text-white btn-user botao-custom" type="button"
+                                (click)="formOK()">Registrar</button>
                             <hr>
                         </form>
-                        
-                        <div class="text-center"><a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
+
+                        <div class="text-center"><a class="small" href="#">Esqueceu sua senha?</a>
                         </div>
                         <div class="text-center"><a class="small" href="../login">Já possui uma conta? Entre aqui!</a>
                         </div>

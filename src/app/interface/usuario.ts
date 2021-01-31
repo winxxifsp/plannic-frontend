@@ -1,7 +1,7 @@
 import { Login } from './login';
 
 export interface Usuario {
-    id?: number, 
+    id?: number,
     nome: string,
-    login:Login
+    login: Login
 }

@@ -17,21 +17,30 @@
                                     <div class="form-group">
                                         <input class="form-control form-control-user" type="email"
                                             id="exampleInputEmail" aria-describedby="emailHelp" placeholder="E-mail"
+                                            [ngStyle]="{'border-color': !emailOk ? 'red' : null}"
                                             [(ngModel)]="form.email" name="email">
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control form-control-user" type="password"
-                                        [(ngModel)]="form.password" id="exampleInputPassword" placeholder="Senha" name="password">
+                                            [(ngModel)]="form.password" id="exampleInputPassword"
+                                            [ngStyle]="{'border-color': !formOk ? 'red' : null}" placeholder="Senha"
+                                            name="password">
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" style="margin-left: 10px;">
+                                        <span [hidden]="formOk" style="color: red; ">Preencher todos os campos</span>
+                                        <br [hidden]="formOk && emailOk">
+                                        <span [hidden]="emailOk" style="color: red; ">E-mail inválido</span>
+                                    </div>
+                                    <div [hidden]="true" class="form-group">
                                         <div class="custom-control custom-checkbox small">
                                             <div class="form-check"><input class="form-check-input custom-control-input"
                                                     type="checkbox" id="formCheck-1"><label
                                                     class="form-check-label custom-control-label"
                                                     for="formCheck-1">Manter Conectado</label></div>
                                         </div>
-                                    </div><button class="btn btn-primary btn-block text-white btn-user botao-custom"
-                                        (click)="onSubmit()" type="button">Login</button>
+                                    </div>
+                                    <button class="btn btn-primary btn-block text-white btn-user botao-custom"
+                                        (click)="formOK()" type="button">Login</button>
                                     <hr>
                                 </form>
                                 <div class="text-center"><a class="small" href="forgot-password.html">Esqueceu a
