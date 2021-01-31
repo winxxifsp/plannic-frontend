@@ -61,15 +61,12 @@
 
 .pag_inicial {
   background-image: url("../../assets/img/img04b.jpg") !important;
-  opacity: 100%;
   background-repeat: round;
-  max-width: 1600px;
+  max-width: 1800px;
 }
 
 .pag_inicial_cards {
   color: #2e282a;
-  font-weight: 700;
-  font-size: 4rem;
 }
 
 .bg-gradient-primary {
@@ -85,7 +82,7 @@
   font-family: 'Comfortaa';
   font-size: 2.9rem !important;
   color: #19647e !important;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .botao-custom {
@@ -111,3 +108,39 @@
   color: #505050;
 }
 
+@media screen and (max-width: 992px) {
+  .pag_inicial_texto {
+    font-size: 3.5em !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .pag_inicial_texto {
+    font-size: 4em !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pag_inicial_texto {
+    font-size: 3.5em !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .pag_inicial_texto {
+    font-size: 3em !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .pag_inicial_texto {
+    font-size: 2.5em !important;
+  }
+}
+
+.pag_inicial_texto {
+  font-family: 'Comfortaa';
+  color: #19647e;
+  font-size: 5em;
+  font-weight: 700;
+}
