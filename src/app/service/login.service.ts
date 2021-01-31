@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Usuario } from '../interface/usuario';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { environmentProd } from 'src/environments/environment.prod';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -10,8 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class LoginService {
-  //public LOGIN_SERVICE_URL = `${environment.API_URL}`;
-  public LOGIN_SERVICE_URL = `${environmentProd.API_URL}`;
+  public LOGIN_SERVICE_URL = `${environment.API_URL}`;
  
   httpOptions = {
     headers: new HttpHeaders({ 'Content-type' : 'application/json'})
