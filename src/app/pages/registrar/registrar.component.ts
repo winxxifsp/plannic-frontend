@@ -31,6 +31,8 @@ export class RegistrarComponent implements OnInit {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        alert("Cadastro realizado com sucesso!")
+        window.location.href = "../login"
       },
       err => {
         this.errorMessage = err.error.message;
