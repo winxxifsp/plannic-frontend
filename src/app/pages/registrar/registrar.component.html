@@ -12,34 +12,30 @@
                             <h4 class="text-dark mb-4">Crie sua conta!</h4>
                         </div>
                         <form class="user">
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input class="form-control form-control-user" type="text" id="exampleName"
-                                        [(ngModel)]="pNome" placeholder="Nome" name="name">
-                                </div>
-                                <div class="col-sm-6">
-                                    <input class="form-control form-control-user" type="text" id="exampleSobrenome"
-                                    [(ngModel)]="sNome" placeholder="Sobrenome" name="sobrenome">
-                                </div>
+                        
+                            <div class="form-group">
+                                <input class="form-control form-control-user" type="text" id="exampleName"
+                                [(ngModel)]="form.nome"  placeholder="Nome Completo" name="nome">
                             </div>
                             <div class="form-group">
                                 <input class="form-control form-control-user" type="email" id="exampleInputEmail"
-                                [(ngModel)]="email" aria-describedby="emailHelp" placeholder="E-mail" name="email">
+                                [(ngModel)]="form.email" aria-describedby="emailHelp" placeholder="E-mail" name="email">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input class="form-control form-control-user" type="password" id="exampleSenhaInput"
-                                    [(ngModel)]="senha" placeholder="Digite sua Senha" name="senha">
+                                    [(ngModel)]="form.password" placeholder="Digite sua Senha" name="senha">
                                 </div>
                                 <div class="col-sm-6">
                                     <input class="form-control form-control-user" type="password"
-                                    [(ngModel)]="confsenha" id="exampleRepeatSenhaInput" placeholder="Digite sua senha novamente"
-                                        name="senha_repeat">
+                                    [(ngModel)]="form.password" id="exampleRepeatSenhaInput" placeholder="Digite sua senha novamente"
+                                        name="password">
                                 </div>
                             </div><button class="btn btn-primary btn-block text-white btn-user botao-custom"
-                                type="button" (click)="registrar()">Registrar</button>
+                                type="button" (click)="onSubmit()">Registrar</button>
                             <hr>
                         </form>
+                        
                         <div class="text-center"><a class="small" href="forgot-password.html">Esqueceu sua senha?</a>
                         </div>
                         <div class="text-center"><a class="small" href="login.html">Já possui uma conta? Entre aqui!</a>

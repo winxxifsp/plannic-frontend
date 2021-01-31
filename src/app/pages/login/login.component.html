@@ -17,11 +17,11 @@
                                     <div class="form-group">
                                         <input class="form-control form-control-user" type="email"
                                             id="exampleInputEmail" aria-describedby="emailHelp" placeholder="E-mail"
-                                            [(ngModel)]="email" name="email">
+                                            [(ngModel)]="form.email" name="email">
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control form-control-user" type="password"
-                                        [(ngModel)]="senha" id="exampleInputPassword" placeholder="Senha" name="password">
+                                        [(ngModel)]="form.password" id="exampleInputPassword" placeholder="Senha" name="password">
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
@@ -31,7 +31,7 @@
                                                     for="formCheck-1">Manter Conectado</label></div>
                                         </div>
                                     </div><button class="btn btn-primary btn-block text-white btn-user botao-custom"
-                                        (click)="login()" type="button">Login</button>
+                                        (click)="onSubmit()" type="button">Login</button>
                                     <hr>
                                 </form>
                                 <div class="text-center"><a class="small" href="forgot-password.html">Esqueceu a

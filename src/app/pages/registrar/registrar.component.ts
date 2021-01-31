@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-registrar',
@@ -6,26 +7,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: LoginService) { }
 
-  pNome:String;
-  sNome:String;
-  email:String;
-  senha:String;
-  confsenha:String;
+  form: any = {
+    nome:null,
+    email: null,
+    password: null
+    };
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+
+
   ngOnInit() {
     document.getElementById("body").classList.add("bg-gradient-primary");
   }
 
-  registrar(){
-    if(this.confsenha === this.senha){
-      let infos = {
-        nome: this.pNome +" "+this.sNome,
-        email: this.email,
-        senha: this.senha,
+  onSubmit(): void {
+    const { email,password,nome  } = this.form; 
+
+    this.loginService.register( email, password,nome).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
       }
-      console.log(infos)
-    }
+    );
   }
+
+
 
 }
