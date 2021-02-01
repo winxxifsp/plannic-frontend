@@ -16,7 +16,7 @@ import { RegistrarComponent } from './pages/registrar/registrar.component';
 import { IndexComponent } from './pages/index/index.component'
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient);
+  return new TranslateHttpLoader(httpClient, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -39,7 +39,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
         },
-        defaultLanguage: 'pt',
     })
   ],
   providers: [],

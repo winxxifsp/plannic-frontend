@@ -15,23 +15,23 @@
                             <div class="form-group">
                                 <input class="form-control form-control-user" type="text" id="exampleName"
                                     [ngStyle]="{'border-color': !formOk ? 'red' : null}" [(ngModel)]="form.nome"
-                                    placeholder="Nome Completo" name="nome">
+                                    placeholder="{{'CRUD-USUARIO.NOME' | translate}}" name="nome">
                             </div>
                             <div class="form-group">
                                 <input class="form-control form-control-user" type="email" id="exampleInputEmail"
                                     [ngStyle]="{'border-color': !emailOk ? 'red' : null}" [(ngModel)]="form.email"
-                                    aria-describedby="emailHelp" placeholder="E-mail" name="email">
+                                    aria-describedby="emailHelp" placeholder="{{'CRUD-USUARIO.EMAIL' | translate}}" name="email">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input [ngStyle]="" class="form-control form-control-user" type="password"
                                         [ngStyle]="{'border-color': !passOk ? 'red' : null}" id="exampleSenhaInput"
-                                        [(ngModel)]="form.password" placeholder="Digite sua Senha" name="senha">
+                                        [(ngModel)]="form.password" placeholder="{{'CRUD-USUARIO.SENHA' | translate}}" name="senha">
                                 </div>
                                 <div class="col-sm-6">
                                     <input class="form-control form-control-user" type="password"
                                         [ngStyle]="{'border-color': !passOk ? 'red' : null}" [(ngModel)]="confPass"
-                                        id="exampleRepeatSenhaInput" placeholder="Digite sua senha novamente"
+                                        id="exampleRepeatSenhaInput" placeholder="{{'CRUD-USUARIO.SENHA2' | translate}}"
                                         name="password">
                                 </div>
                             </div>
@@ -39,16 +39,16 @@
                             <div class="form-group" style="margin-left: 10px;">
                                 <span [hidden]="formOk" style="color: red; ">{{'CRUD-USUARIO.CAMPOS' | translate}}</span>
                                 <br [hidden]="formOk && passOk">
-                                <span [hidden]="passOk" style="color: red; ">Senhas divergentes</span>
+                                <span [hidden]="passOk" style="color: red; ">{{'CRUD-USUARIO.SENHA-ERR' | translate}}</span>
                                 <br [hidden]="((formOk && passOk) || (passOk && emailOk))">
-                                <span [hidden]="emailOk" style="color: red; ">{{'CRUD-USUARIO.EMAIL' | translate}}</span>
+                                <span [hidden]="emailOk" style="color: red; ">{{'CRUD-USUARIO.EMAIL-ERR' | translate}}</span>
                             </div>
                             <button class="btn btn-primary btn-block text-white btn-user botao-custom" type="button"
-                                (click)="formOK()">Registrar</button>
+                                (click)="formOK()">{{'CRUD-USUARIO.REGISTRAR' | translate}}</button>
                             <hr>
                         </form>
 
-                        <div class="text-center"><a class="small" href="#">{{'CRUD-USUARIO.SENHA' | translate}}</a>
+                        <div class="text-center"><a class="small" href="#">{{'CRUD-USUARIO.SENHA-FORGOT' | translate}}</a>
                         </div>
                         <div class="text-center"><a class="small" href="../login">{{'CRUD-USUARIO.CONTA-OK' | translate}}</a>
                         </div>

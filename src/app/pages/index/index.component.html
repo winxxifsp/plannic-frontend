@@ -15,7 +15,7 @@
                 <form class="form-inline mr-auto" target="_self">
                     <div class="form-group"><label for="search-field"></label></div>
                 </form>
-                <select #langSelect (change)="translate.use(langSelect.value)">
+                <select #langSelect (change)="switchLang(langSelect.value)">
                   <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
                 </select>
                 <span class="navbar-text"><a class="login" href="/registrar" style="padding: 5px;">{{'PADRAO.CADASTRE-SE' | translate}}</a>

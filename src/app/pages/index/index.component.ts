@@ -7,19 +7,21 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class IndexComponent implements OnInit {
   public isPortugues:boolean = true;
+  public lang;
 
   constructor(
     public translate: TranslateService
   ) {
-    translate.addLangs(['pt', 'en']);
-    translate.setDefaultLang('en');
-
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|pt/) ? browserLang : 'en');
-  
+    this.lang = localStorage.getItem('lang') || 'pt-BR';
+    translate.addLangs(['pt-BR', 'en']);
    }
 
   ngOnInit() {
     document.getElementById("body").classList.remove("bg-gradient-primary");
+  }
+
+  switchLang(lang: string): void {
+    localStorage.setItem('lang', lang);
+    window.location.reload();
   }
 }
