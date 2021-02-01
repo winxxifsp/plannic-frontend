@@ -27,36 +27,34 @@ export class RegistrarComponent implements OnInit {
   }
 
   onSubmit({ email, password, nome }): void {
-      this.loginService.register(email, password, nome).subscribe(
-        data => {
-          console.log(data);
-          this.isSuccessful = true;
-          this.isSignUpFailed = false;
-          alert("Cadastro realizado com sucesso!")
-          window.location.href = "../login"
-        },
-        err => {
-          this.errorMessage = err.error.message;
-          this.isSignUpFailed = true;
-        } 
-      );
+    this.loginService.register(email, password, nome).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+        alert("Cadastro realizado com sucesso!")
+        window.location.href = "../login"
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
 
   passOK(password) {
-    console.log(password)
-    console.log(this.confPass)
     if (password === this.confPass) {
       this.passOk = true;
       return true;
     } else {
-      this.passOk = true;
-      return true;
+      this.passOk = false;
+      return false;
     }
   }
 
   emailOK(email) {
     if (email.search("@") != -1 &&
-      (email.search("gmail.com") != -1 || email.search("outlook.com") != -1 || email.search("yahoo.com") != -1)) {
+      email.search(".com") != -1) {
       this.emailOk = true;
       return true;
     } else {

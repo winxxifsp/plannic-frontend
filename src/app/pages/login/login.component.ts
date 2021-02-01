@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   emailOK(email) {
     if (email.search("@") != -1 &&
-      (email.search("gmail.com") != -1 || email.search("outlook.com") != -1 || email.search("yahoo.com") != -1)) {
+      email.search(".com") != -1 ) {
       this.emailOk = true;
       return true;
     } else {
