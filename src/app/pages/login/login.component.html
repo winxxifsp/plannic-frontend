@@ -11,7 +11,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h4 class="text-dark mb-4">Bem vindo!</h4>
+                                    <h4 class="text-dark mb-4">{{'CRUD-USUARIO.BEM-VINDO' | translate}}</h4>
                                 </div>
                                 <form class="user">
                                     <div class="form-group">
@@ -27,25 +27,24 @@
                                             name="password">
                                     </div>
                                     <div class="form-group" style="margin-left: 10px;">
-                                        <span [hidden]="formOk" style="color: red; ">Preencher todos os campos</span>
+                                        <span [hidden]="formOk" style="color: red; ">{{'CRUD-USUARIO.CAMPOS' | translate}}</span>
                                         <br [hidden]="formOk && emailOk">
-                                        <span [hidden]="emailOk" style="color: red; ">E-mail inválido</span>
+                                        <span [hidden]="emailOk" style="color: red; ">{{'CRUD-USUARIO.EMAIL' | translate}}</span>
                                     </div>
                                     <div [hidden]="true" class="form-group">
                                         <div class="custom-control custom-checkbox small">
                                             <div class="form-check"><input class="form-check-input custom-control-input"
                                                     type="checkbox" id="formCheck-1"><label
                                                     class="form-check-label custom-control-label"
-                                                    for="formCheck-1">Manter Conectado</label></div>
+                                                    for="formCheck-1">{{'CRUD-USUARIO.CONECTADO' | translate}}</label></div>
                                         </div>
                                     </div>
                                     <button class="btn btn-primary btn-block text-white btn-user botao-custom"
-                                        (click)="formOK()" type="button">Login</button>
+                                        (click)="formOK()" type="button">{{'CRUD-USUARIO.LOGIN' | translate}}</button>
                                     <hr>
                                 </form>
-                                <div class="text-center"><a class="small" href="forgot-password.html">Esqueceu a
-                                        senha?</a></div>
-                                <div class="text-center"><a class="small" href="../registrar">Crie sua conta.</a></div>
+                                <div class="text-center"><a class="small" href="forgot-password.html">{{'CRUD-USUARIO.SENHA' | translate}}</a></div>
+                                <div class="text-center"><a class="small" href="../registrar">{{'CRUD-USUARIO.CONTA' | translate}}</a></div>
                             </div>
                         </div>
                     </div>
