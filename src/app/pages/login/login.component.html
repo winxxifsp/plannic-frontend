@@ -16,20 +16,20 @@
                                 <form class="user">
                                     <div class="form-group">
                                         <input class="form-control form-control-user" type="email"
-                                            id="exampleInputEmail" aria-describedby="emailHelp" placeholder="E-mail"
+                                            id="exampleInputEmail" aria-describedby="emailHelp" placeholder="{{'CRUD-USUARIO.EMAIL' | translate}}"
                                             [ngStyle]="{'border-color': !emailOk ? 'red' : null}"
                                             [(ngModel)]="form.email" name="email">
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control form-control-user" type="password"
                                             [(ngModel)]="form.password" id="exampleInputPassword"
-                                            [ngStyle]="{'border-color': !formOk ? 'red' : null}" placeholder="Senha"
+                                            [ngStyle]="{'border-color': !formOk ? 'red' : null}" placeholder="{{'CRUD-USUARIO.SENHA' | translate}}"
                                             name="password">
                                     </div>
                                     <div class="form-group" style="margin-left: 10px;">
                                         <span [hidden]="formOk" style="color: red; ">{{'CRUD-USUARIO.CAMPOS' | translate}}</span>
                                         <br [hidden]="formOk && emailOk">
-                                        <span [hidden]="emailOk" style="color: red; ">{{'CRUD-USUARIO.EMAIL' | translate}}</span>
+                                        <span [hidden]="emailOk" style="color: red; ">{{'CRUD-USUARIO.EMAIL-ERR' | translate}}</span>
                                     </div>
                                     <div [hidden]="true" class="form-group">
                                         <div class="custom-control custom-checkbox small">
@@ -43,7 +43,7 @@
                                         (click)="formOK()" type="button">{{'CRUD-USUARIO.LOGIN' | translate}}</button>
                                     <hr>
                                 </form>
-                                <div class="text-center"><a class="small" href="forgot-password.html">{{'CRUD-USUARIO.SENHA' | translate}}</a></div>
+                                <div class="text-center"><a class="small" href="forgot-password.html">{{'CRUD-USUARIO.SENHA-FORGOT' | translate}}</a></div>
                                 <div class="text-center"><a class="small" href="../registrar">{{'CRUD-USUARIO.CONTA' | translate}}</a></div>
                             </div>
                         </div>

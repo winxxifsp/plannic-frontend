@@ -19,11 +19,33 @@
     "CRUD-USUARIO": {
         "BEM-VINDO": "Welcome!",
         "CAMPOS": "Please complete all required text fields",
-        "EMAIL": "Please enter a valid email address",
+        "EMAIL-ERR": "Please enter a valid email address",
         "CONECTADO": "Remember Me",
         "LOGIN": "Login",
-        "SENHA": "Forgot Password?",
+        "SENHA-FORGOT": "Forgot Password?",
         "CONTA": "Create new account",
-        "CONTA-OK": "Already have an account?"
+        "CONTA-OK": "Already have an account?",
+        "REGISTRAR": "Create account",
+        "NOME": "Full name",
+        "EMAIL": "E-mail",
+        "SENHA": "Password",
+        "SENHA2": "Password again",
+        "SENHA-ERR": "Different passwords"
+    },
+    "DASHBOARD": {
+        "CADASTRO": "Register",
+        "CALENDARIO": "Calendar",
+        "MATERIAS": "Subjects",
+        "SAIR": "Logout",
+        "ALTERAR-IMG": "Change Image",
+        "PERFORMANCE": "Performance",
+        "DADOS": "User",
+        "EMAIL": "E-mail",
+        "NOME": "Name",
+        "SOBRENOME": "Last Name",
+        "SALVAR": "Save",
+        "PERFIL": "Profile",
+        "CONFIGURACOES": "Settings",
+        "ATIVIDADE": "Activity Log"
     }
 }
