@@ -11,11 +11,11 @@ export class IndexComponent implements OnInit {
   constructor(
     public translate: TranslateService
   ) {
-    translate.addLangs(['pt', 'en']);
-    translate.setDefaultLang('en');
+    translate.addLangs(['pt-br', 'en']);
+    translate.setDefaultLang('pt-br');
 
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|pt/) ? browserLang : 'en');
+    translate.use(browserLang.match(/en|pt-br/) ? browserLang : 'pt-br');
   
    }
 
