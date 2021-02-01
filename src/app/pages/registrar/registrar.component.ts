@@ -74,8 +74,7 @@ export class RegistrarComponent implements OnInit {
       this.passOk = true;
       this.emailOk = true;
       if (this.emailOK(email) && this.passOK(password))
-        console.log("entrou")
-      //this.onSubmit(this.form);
+        this.onSubmit(this.form);
     }
   }
 }
