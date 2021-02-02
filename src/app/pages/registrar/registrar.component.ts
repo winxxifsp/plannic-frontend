@@ -36,6 +36,8 @@ export class RegistrarComponent implements OnInit {
         window.location.href = "../login"
       },
       err => {
+        alert("Cadastro não realizado!")
+        window.location.href = "../registrar"
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
       }
