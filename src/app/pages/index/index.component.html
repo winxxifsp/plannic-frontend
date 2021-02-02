@@ -1,10 +1,8 @@
-<!-- Start: Header Dark -->
-<div></div><!-- End: Header Dark -->
 <header class="masthead text-white text-center">
     <div class="overlay"></div>
     <nav class="navbar navbar-dark navbar-expand-lg navigation-clean-search">
         <div class="container">
-            <a class="navbar-brand logo" href="#" style="width: 240px;height: 70px;padding: 3px;">
+            <a class="navbar-brand logo" href="/" style="width: 240px;height: 70px;padding: 3px;">
                 <img class="float-left" src="assets/img/logo.png" style="height: 60px;padding: 5px;">
                 Plannic
             </a>
@@ -15,12 +13,6 @@
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item">
-                        <select #langSelect (change)="switchLang(langSelect.value)">
-                            <option *ngFor="let lang of translate.getLangs()" [value]="lang"
-                                [selected]="lang === translate.currentLang">{{ lang }}</option>
-                        </select>
-                    </li>
-                    <li class="nav-item">
                         <span class="navbar-text"><a class="login" href="/registrar"
                                 style="padding: 5px;">{{'PADRAO.CADASTRE-SE' | translate}}</a>
                         </span>
@@ -29,6 +21,12 @@
                         <a href="/login">
                             <button class="btn btn-primary .botao-custom" type="button">{{'PADRAO.ENTRAR' | translate}}</button>
                         </a>
+                    </li>
+                    <li class="nav-item" style="margin-top: 5px; margin-left: 5px;">
+                        <select class="form-control form-control-sm" #langSelect (change)="switchLang(langSelect.value)">
+                            <option *ngFor="let lang of translate.getLangs()" [value]="lang"
+                                [selected]="lang === translate.currentLang">{{ lang }}</option>
+                        </select>
                     </li>
                 </ul>
             </div>
@@ -96,7 +94,7 @@
         </div><!-- End: Social Icons -->
         <!-- Start: Links -->
         <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">{{'INDEX.HOME' | translate}}</a></li>
+            <li class="list-inline-item"><a href="/">{{'INDEX.HOME' | translate}}</a></li>
             <li class="list-inline-item"><a href="#">{{'INDEX.QUEM-SOMOS' | translate}}</a></li>
             <li class="list-inline-item"><a href="#">{{'INDEX.PRIVACIDADE' | translate}}</a></li>
         </ul><!-- End: Links -->
