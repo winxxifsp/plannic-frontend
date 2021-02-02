@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   formOk: boolean = true;
   roles: string[] = [];
 
-  constructor(private authService: LoginService, private tokenStorage: TokenStorageService,  private router:Router) { }
+  constructor(private authService: LoginService, private tokenStorage: TokenStorageService, private router: Router) { }
   email: String;
   senha: String;
 
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   emailOK(email) {
     if (email.search("@") != -1 &&
-      email.search(".com") != -1 ) {
+      email.search(".com") != -1) {
       this.emailOk = true;
       return true;
     } else {
@@ -45,25 +45,21 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit({ email, password }): void {
-    if(this.emailOK(email)){
-      this.authService.login(email, password).subscribe(
-        data => {
-          this.tokenStorage.saveToken(data.accessToken);
-          this.tokenStorage.saveUser(data);
-  
+  onSubmit(email, password) {
+    this.authService.login(email, password)
+      .then(token => {
+          console.log(token);
+          this.tokenStorage.saveToken(token);          
+          //this.tokenStorage.saveUser(data);  
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.roles = this.tokenStorage.getUser().roles;
-          this.router.navigate([`/dashboard`]);
-  
-        },
-        err => {
-          this.errorMessage = err.error.message;
-          this.isLoginFailed = true;
-        }
-      );
-    }
+          this.router.navigate(['/dashboard']);
+      })
+      .catch(e => {
+        alert("Login não realizado");
+        console.log(e);
+      });
   }
 
   formOK(): void {
@@ -75,7 +71,7 @@ export class LoginComponent implements OnInit {
       this.formOk = true;
       this.emailOk = true;
       if (this.emailOK(email))
-        this.onSubmit(this.form);
+        this.onSubmit(email, password);
     }
   }
 
